@@ -1,307 +1,350 @@
-# SpendWise - AI-Powered Expense Tracker
+# Expense Intelligence AI 💰🤖
 
-An intelligent expense tracking system that uses OpenAI's GPT-4 API to automatically categorize transactions, generate financial insights, predict budget risks, and visualize spending trends.
+A **Full Stack MERN + AI Smart Expense Tracker** that helps users manage expenses, track income, analyze spending patterns, and receive AI-powered financial insights.
 
-## Features
+---
 
-- **Auto-Categorization**: Uses OpenAI GPT-4 to intelligently categorize expenses
-- **Monthly Financial Insights**: AI-generated analysis of spending patterns
-- **Budget Risk Prediction**: ML-powered predictions of budget overruns
-- **Spending Visualization**: Interactive charts and trend analysis
-- **Category Breakdown**: Visual representation of spending by category
-- **Budget Progress Tracking**: Monitor budget usage per category
-- **Real-time Dashboard**: Live updates of financial metrics
+# 🚀 Features
 
-## Tech Stack
+## Dashboard
 
-### Backend
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: MongoDB
-- **AI Integration**: OpenAI GPT-4 API
-- **Authentication**: bcryptjs for password hashing
-- **HTTP**: axios for API calls
+* Total Spent tracking
+* Editable Total Income
+* Savings calculation
+* Savings Goal monitoring
+* Spending Trends Graph
+* Category Breakdown
+* Budget Risk Score
 
-### Frontend
-- **Framework**: React 18
-- **Build Tool**: Vite
-- **Routing**: React Router
-- **Data Visualization**: Recharts
-- **HTTP Client**: axios
-- **Styling**: CSS3 with custom design system
+## Expense Management
 
-## Project Structure
+* Add transactions
+* Delete expenses
+* Filter and search transactions
+* Categorize expenses automatically
+
+## Analytics
+
+* Monthly spending trends
+* Category distribution charts
+* Weekly spending analysis
+* Financial insights summary
+
+## AI Intelligence
+
+* AI expense categorization
+* AI financial insight generation
+* Budget risk prediction
+
+## Profile
+
+* User profile dropdown
+* Editable profile details
+* Stored locally
+
+### 🖼️ Project Preview
+<img width="1873" height="906" alt="image" src="https://github.com/user-attachments/assets/7fff863f-fbf1-4233-8e7a-a1980f765ca0" />
+<img width="1878" height="908" alt="image" src="https://github.com/user-attachments/assets/bd2ad6af-dc8d-43db-90dc-1eb3c290c686" />
+<img width="1876" height="904" alt="image" src="https://github.com/user-attachments/assets/98acd49f-411e-4ba9-9146-252ec6c7c1ab" />
+<img width="1877" height="912" alt="image" src="https://github.com/user-attachments/assets/2f6d0430-ad72-403f-aa58-6e5fef94813d" />
+<img width="1878" height="906" alt="image" src="https://github.com/user-attachments/assets/f428e2a8-5602-4e53-a60b-9c6c7647dbeb" />
+<img width="1884" height="905" alt="image" src="https://github.com/user-attachments/assets/8a5b630c-7581-483a-8675-c675b4c40a71" />
+
+---
+
+# 🧰 Tech Stack
+
+## Frontend
+
+* React.js
+* Vite
+* React Router
+* Recharts (Charts)
+* CSS
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
+
+## AI
+
+* OpenAI API
+
+## Tools
+
+* Axios
+* Nodemon
+* Dotenv
+
+---
+
+# 📁 Project Folder Structure
 
 ```
-spendwise-ai/
-├── server/                          # Backend (Node.js + Express)
-│   ├── config/
-│   │   └── db.js                   # MongoDB connection
-│   ├── controllers/
-│   │   ├── expenseController.js    # Expense CRUD operations
-│   │   └── analyticsController.js  # Analytics endpoints
-│   ├── models/
-│   │   ├── Expense.js              # Expense schema
-│   │   └── User.js                 # User schema
-│   ├── routes/
-│   │   ├── expenseRoutes.js        # Expense API routes
-│   │   └── analyticsRoutes.js      # Analytics API routes
-│   ├── utils/
-│   │   └── aiCategorizer.js        # OpenAI integration
-│   ├── server.js                   # Express server setup
-│   ├── .env                        # Environment variables
+Expense_Intelligence_AI
+│
+├── client (Frontend - React)
+│   ├── public
+│   ├── src
+│   │   ├── components
+│   │   │   ├── Header.jsx
+│   │   │   ├── SummaryCard.jsx
+│   │   │   ├── SpendingChart.jsx
+│   │   │   ├── CategoryBreakdown.jsx
+│   │   │   ├── TransactionList.jsx
+│   │   │   ├── RiskScoreCard.jsx
+│   │   │   ├── AddExpenseForm.jsx
+│   │   │
+│   │   ├── pages
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Expenses.jsx
+│   │   │   ├── Analytics.jsx
+│   │   │   ├── Profile.jsx
+│   │   │
+│   │   ├── styles
+│   │   │   ├── Dashboard.css
+│   │   │   ├── Analytics.css
+│   │   │   ├── Expenses.css
+│   │   │   ├── Profile.css
+│   │   │
+│   │   ├── api
+│   │   │   └── api.js
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │
 │   └── package.json
 │
-└── client/                          # Frontend (React + Vite)
-    ├── src/
-    │   ├── components/
-    │   │   ├── Header.jsx          # Navigation header
-    │   │   ├── SummaryCard.jsx     # Summary cards (Spent, Income, Goal)
-    │   │   ├── SpendingChart.jsx   # Line chart visualization
-    │   │   ├── RiskScoreCard.jsx   # Budget risk indicator
-    │   │   ├── TransactionList.jsx # Recent transactions table
-    │   │   ├── CategoryBreakdown.jsx # Category distribution
-    │   │   └── AddExpenseForm.jsx  # Expense form
-    │   ├── pages/
-    │   │   └── Dashboard.jsx       # Main dashboard page
-    │   ├── services/
-    │   │   └── api.js              # API service layer
-    │   ├── styles/
-    │   │   └── Dashboard.css       # Dashboard styles
-    │   ├── App.jsx                 # Root component
-    │   ├── App.css
-    │   ├── index.css               # Global styles
-    │   └── main.jsx                # Entry point
-    ├── index.html
-    ├── vite.config.js
-    ├── .env
-    └── package.json
+├── server (Backend)
+│   ├── config
+│   │   └── db.js
+│   │
+│   ├── controllers
+│   │   ├── expenseController.js
+│   │   ├── analyticsController.js
+│   │
+│   ├── models
+│   │   ├── Expense.js
+│   │   ├── User.js
+│   │
+│   ├── routes
+│   │   ├── expenseRoutes.js
+│   │   ├── analyticsRoutes.js
+│   │
+│   ├── utils
+│   │   └── aiCategorizer.js
+│   │
+│   ├── server.js
+│   └── package.json
+│
+├── README.md
 ```
 
-## Installation & Setup
+---
 
-### Prerequisites
-- Node.js (v16 or higher)
-- MongoDB Atlas account
-- OpenAI API key
+# ⚙️ Installation
 
-### Backend Setup
+## Clone Repository
 
-1. **Navigate to server directory**
-   ```bash
-   cd server
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables** (`.env`)
-   ```
-   MONGODB_URI=your_mongodb_atlas_connection_string
-   OPENAI_API_KEY=your_openai_api_key
-   PORT=5000
-   NODE_ENV=development
-   ```
-
-4. **Start the server**
-   ```bash
-   npm run dev
-   ```
-   Server runs on `http://localhost:5000`
-
-### Frontend Setup
-
-1. **Navigate to client directory**
-   ```bash
-   cd client
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables** (`.env`)
-   ```
-   VITE_API_BASE_URL=http://localhost:5000/api
-   ```
-
-4. **Start development server**
-   ```bash
-   npm run dev
-   ```
-   Frontend runs on `http://localhost:3000`
-
-## API Endpoints
-
-### Expenses
-- `POST /api/expenses` - Add new expense
-- `GET /api/expenses/:userId` - Get all expenses
-- `PUT /api/expenses/:id` - Update expense
-- `DELETE /api/expenses/:id` - Delete expense
-- `GET /api/expenses/:userId/categories` - Get category breakdown
-
-### Analytics
-- `GET /api/analytics/:userId/trends` - Get spending trends (6 months)
-- `GET /api/analytics/:userId/summary` - Get monthly summary
-- `GET /api/analytics/:userId/insights` - Get AI-generated insights
-- `GET /api/analytics/:userId/risk` - Get budget risk prediction
-- `GET /api/analytics/:userId/recent` - Get recent transactions
-
-## Environment Variables
-
-### Server (.env)
 ```
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database
-OPENAI_API_KEY=sk-your-openai-key
+git clone https://github.com/yourusername/expense-intelligence-ai.git
+cd expense-intelligence-ai
+```
+
+---
+
+# 🖥 Backend Setup
+
+Navigate to server
+
+```
+cd server
+```
+
+Install dependencies
+
+```
+npm install
+```
+
+Create `.env` file
+
+```
 PORT=5000
-NODE_ENV=development
+MONGO_URI=your_mongodb_connection_string
+OPENAI_API_KEY=your_openai_api_key
 ```
 
-### Client (.env)
+Start backend
+
 ```
-VITE_API_BASE_URL=http://localhost:5000/api
+npm run dev
 ```
 
-## Key Features Explained
+Server runs at
 
-### AI Auto-Categorization
-The system uses OpenAI GPT-4 to analyze merchant names, amounts, and descriptions to automatically assign appropriate categories:
-- Food & Dining
-- Transport
-- Entertainment
-- Utilities
-- Shopping
-- Health
-- Education
-- Other
+```
+http://localhost:5000
+```
+
+---
+
+# 🌐 Frontend Setup
+
+Navigate to client
+
+```
+cd client
+```
+
+Install dependencies
+
+```
+npm install
+```
+
+Run frontend
+
+```
+npm run dev
+```
+
+Frontend runs at
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🧠 AI Features
+
+The application uses **OpenAI API** for:
+
+### Expense Categorization
+
+Automatically categorizes transactions into:
+
+* Food & Dining
+* Transport
+* Entertainment
+* Utilities
+* Shopping
+* Health
+* Education
+* Other
 
 ### Financial Insights
-GPT-4 analyzes spending patterns to generate actionable insights about budget usage, spending trends, and recommendations.
+
+AI analyzes spending patterns and generates:
+
+* Savings advice
+* Budget recommendations
+* Spending optimization suggestions
 
 ### Budget Risk Prediction
-Based on current spending rate and days into the month, the system:
-- Calculates projected monthly spending
-- Determines risk level (low/medium/high)
-- Provides recommendations
 
-### Data Visualization
-Interactive Recharts visualizations include:
-- 6-month spending trend line chart
-- Category breakdown with progress bars
-- Budget progress tracking
+Risk score calculated using:
 
-## Development
+* Total Spending
+* Monthly Budget
+* Remaining Days
+* Spending Rate
 
-### Run Backend in Dev Mode
-```bash
-cd server
-npm run dev  # Uses nodemon for auto-restart
+---
+
+# 📊 API Endpoints
+
+### Expense Routes
+
+```
+POST /api/expenses
+GET /api/expenses/:userId
+PUT /api/expenses/:id
+DELETE /api/expenses/:id
 ```
 
-### Run Frontend in Dev Mode
-```bash
-cd client
-npm run dev  # Uses Vite with HMR
+### Analytics Routes
+
+```
+GET /api/analytics/:userId/trends
+GET /api/analytics/:userId/summary
+GET /api/analytics/:userId/insights
+GET /api/analytics/:userId/risk
 ```
 
-### Build for Production
+---
 
-Backend:
-```bash
-cd server
-npm start
-```
-
-Frontend:
-```bash
-cd client
-npm run build
-npm run preview
-```
-
-## Database Schema
-
-### User Model
-```javascript
-{
-  name: String,
-  email: String (unique),
-  password: String (hashed),
-  monthlyBudget: Number,
-  savingsGoal: Number,
-  createdAt: Date,
-  updatedAt: Date
-}
-```
+# 💾 Database Schema
 
 ### Expense Model
-```javascript
+
+```
 {
-  userId: ObjectId (ref: User),
-  merchant: String,
-  amount: Number,
-  category: String,
-  description: String,
-  date: Date,
-  aiCategorized: Boolean,
-  createdAt: Date,
-  updatedAt: Date
+ userId: ObjectId,
+ merchant: String,
+ amount: Number,
+ category: String,
+ type: "expense | income",
+ date: Date
 }
 ```
 
-## Authentication (Future Implementation)
-- JWT token-based authentication
-- Secure password hashing with bcryptjs
-- User sessions
+---
 
-## Error Handling
-- Try-catch blocks in all routes
-- Validation of required fields
-- Meaningful error messages
-- Graceful fallbacks for AI categorization
+# 📈 Dashboard Calculations
 
-## Performance Optimization
-- MongoDB indexing on userId and category
-- Cached API responses
-- Debounced form submissions
-- Lazy loading of components
+```
+Total Spent = Sum of all expense transactions
 
-## Future Enhancements
-- User authentication and sign-up
-- Multiple account management
-- Custom budget categories
-- Recurring expense tracking
-- Export to CSV/PDF
-- Mobile app version
-- Real-time notifications
-- Machine learning for better predictions
-- Integration with banking APIs
+Total Income = User defined monthly income
 
-## Troubleshooting
+Savings = Income - Expenses
+```
 
-### MongoDB Connection Error
-- Verify MongoDB Atlas connection string
-- Check IP whitelist in MongoDB Atlas
-- Ensure network connectivity
+---
 
-### OpenAI API Errors
-- Verify API key is correct
-- Check account has sufficient credits
-- Monitor rate limits
+# 🔐 Environment Variables
 
-### CORS Issues
-- Ensure backend CORS middleware is configured
-- Check frontend API URL in .env
-- Verify servers are running on correct ports
+```
+PORT=5000
+MONGO_URI=MongoDB Atlas URL
+OPENAI_API_KEY=OpenAI API Key
+```
 
-## Support
-For issues or questions, please open an issue in the repository.
+---
 
-## License
-MIT
+# 🧪 How to Test
 
-## Author
-SpendWise Development Team
+1. Start Backend
+2. Start Frontend
+3. Add Expense Transactions
+4. Check Dashboard Updates
+5. View Analytics Charts
+6. Observe AI Financial Insights
+
+---
+
+# 🎯 Future Improvements
+
+* User Authentication (JWT)
+* Multi-user accounts
+* Income transaction support
+* Export reports (PDF)
+* Notifications for budget limits
+* Mobile responsive improvements
+
+---
+
+# 👨‍💻 Author
+
+**Swayam Sankar Nayak**
+
+---
+
+# ⭐ Support
+
+If you like this project, consider giving it a **star ⭐ on GitHub**.
