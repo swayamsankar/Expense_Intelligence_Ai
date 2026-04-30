@@ -51,6 +51,9 @@ A **Full Stack MERN + AI Smart Expense Tracker** that helps users manage expense
 <img width="1884" height="905" alt="image" src="https://github.com/user-attachments/assets/8a5b630c-7581-483a-8675-c675b4c40a71" />
 
 ---
+# Architecture Diagram
+<img width="1440" height="1320" alt="image" src="https://github.com/user-attachments/assets/f71f6ae3-c670-4f09-a165-d8655877db07" />
+
 
 # 🧰 Tech Stack
 
